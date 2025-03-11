@@ -40,5 +40,6 @@ cached a previous version. To work around this, please try the following:
   `docker ps --filter name=openhands-runtime- --filter status=running -aq | xargs docker stop`
 * Remove any containers where the name has the prefix `openhands-runtime-` :
   `docker rmi $(docker images --filter name=openhands-runtime- -q --no-trunc)`
-* Stop and Remove any containers / images where the name has the prefix `openhands-runtime-`
+* Remove any dangling images:
+  `docker image prune -f`
 * Prune containers / images : `docker container prune -f && docker image prune -f`
